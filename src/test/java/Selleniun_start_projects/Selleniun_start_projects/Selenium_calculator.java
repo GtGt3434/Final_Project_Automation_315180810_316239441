@@ -15,7 +15,8 @@ public class Selenium_calculator {
 	
 	static WebDriver  browser;
 	 
-	 @Before
+	 @SuppressWarnings("deprecation")
+	@Before
 	  public void setup() {
 		 
 			  System.setProperty("webdriver.gecko.driver","C:\\geckodriver-v0.34.0-win32\\geckodriver.exe");

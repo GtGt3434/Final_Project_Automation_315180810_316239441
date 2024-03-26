@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class root_calculator {
 	 static WebDriver  browser;
 	
+	@SuppressWarnings("deprecation")
 	@Before
 	  public void setup() {
 		 
