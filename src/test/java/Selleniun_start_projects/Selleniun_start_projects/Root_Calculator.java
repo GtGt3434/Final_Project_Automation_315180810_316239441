@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class root_calculator {
+public class Root_Calculator {
 	 static WebDriver  browser;
 	
 	@SuppressWarnings("deprecation")
