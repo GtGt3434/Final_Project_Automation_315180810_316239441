@@ -27,7 +27,7 @@ public class Selenium_calculator {
 	}
 
 	@Test
-	public void Tests1() {
+	public void Addition() {
 
 		browser.findElement(By.id("button01")).click();
 		browser.findElement(By.id("buttonplus")).click();
@@ -44,6 +44,111 @@ public class Selenium_calculator {
 		String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
 		System.out.println(result);
 		String Expected = "3";
+		assertEquals(Expected, result);
+	}
+
+	@Test
+	public void Subtraction() {
+
+		browser.findElement(By.id("button04")).click();
+		browser.findElement(By.id("buttonminus")).click();
+		browser.findElement(By.id("button02")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+		}
+
+		browser.findElement(By.id("buttonequals")).click();
+		System.out.println("hello");
+
+		String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
+		System.out.println(result);
+		String Expected = "2";
+		assertEquals(Expected, result);
+	}
+
+	@Test
+	public void Multiplication() {
+
+		browser.findElement(By.id("button06")).click();
+		browser.findElement(By.id("buttonmultiply")).click();
+		browser.findElement(By.id("button06")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+		}
+
+		browser.findElement(By.id("buttonequals")).click();
+		System.out.println("hello");
+
+		String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
+		System.out.println(result);
+		String Expected = "36";
+		assertEquals(Expected, result);
+	}
+
+	@Test
+	public void Division() {
+
+		browser.findElement(By.id("button09")).click();
+		browser.findElement(By.id("buttondivide")).click();
+		browser.findElement(By.id("button03")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+		}
+
+		browser.findElement(By.id("buttonequals")).click();
+		System.out.println("hello");
+
+		String result = browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
+		System.out.println(result);
+		String Expected = "3";
+		assertEquals(Expected, result);
+	}
+
+	@Test
+	public void Not_Zero_Devided_By_0() {
+
+		browser.findElement(By.id("button05")).click();
+		browser.findElement(By.id("buttondivide")).click();
+		browser.findElement(By.id("button00")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+		}
+
+		browser.findElement(By.id("buttonequals")).click();
+		System.out.println("hello");
+
+		String result = browser.findElement(By.id("calculated-display")).getAttribute("value");
+		System.out.println(result);
+		String Expected = "Infinity";
+		assertEquals(Expected, result);
+	}
+
+	@Test
+	public void Zero_Devided_By_Zero() {
+
+		browser.findElement(By.id("button00")).click();
+		browser.findElement(By.id("buttondivide")).click();
+		browser.findElement(By.id("button00")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+		}
+
+		browser.findElement(By.id("buttonequals")).click();
+		System.out.println("hello");
+
+		String result = browser.findElement(By.id("calculated-display")).getAttribute("value");
+		System.out.println(result);
+		String Expected = "NaN";
 		assertEquals(Expected, result);
 	}
 }
