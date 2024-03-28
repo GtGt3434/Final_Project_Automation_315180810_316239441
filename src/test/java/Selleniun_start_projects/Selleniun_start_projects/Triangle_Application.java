@@ -109,4 +109,5 @@ public class Triangle_Application {
 		String result = browser.findElement(By.id("triangle-type")).getText();
 		assertEquals(expected, result);
 	}
+
 }
