@@ -1,7 +1,6 @@
 package Selleniun_start_projects.Selleniun_start_projects;
 
 import static org.junit.Assert.assertEquals;
-
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Before;
@@ -31,6 +30,7 @@ public class Triangle_Application {
 		String expected = "Error: Side 1 is not a Number";
 		String result = browser.findElement(By.id("triangle-type")).getText();
 		assertEquals(expected, result);
+		browser.close();
 	}
 
 	@Test
@@ -42,6 +42,7 @@ public class Triangle_Application {
 		String expected = "Error: Side 2 is not a Number";
 		String result = browser.findElement(By.id("triangle-type")).getText();
 		assertEquals(expected, result);
+		browser.close();
 	}
 
 	@Test
@@ -53,28 +54,55 @@ public class Triangle_Application {
 		String expected = "Error: Side 3 is not a Number";
 		String result = browser.findElement(By.id("triangle-type")).getText();
 		assertEquals(expected, result);
+		browser.close();
 	}
 
 	@Test
-	public void Not_A_Triangle_Side_1_0() {
-		browser.findElement(By.id("side1")).sendKeys("0");
-		browser.findElement(By.id("side2")).sendKeys("3");
-		browser.findElement(By.id("side3")).sendKeys("3");
+	public void Not_A_Triangle() {
+		browser.findElement(By.id("side1")).sendKeys("1");
+		browser.findElement(By.id("side2")).sendKeys("2");
+		browser.findElement(By.id("side3")).sendKeys("10");
 		browser.findElement(By.id("identify-triangle-action")).click();
 		String expected = "Error: Not a Triangle";
 		String result = browser.findElement(By.id("triangle-type")).getText();
 		assertEquals(expected, result);
+		browser.close();
 	}
 
 	@Test
-	public void Not_A_Triangle_One_Side_is_Bigger_Than_The_Sum_Of_The_Others() {
-		browser.findElement(By.id("side1")).sendKeys("3");
-		browser.findElement(By.id("side2")).sendKeys("3");
-		browser.findElement(By.id("side3")).sendKeys("7");
+	public void Not_A_Triangle_C4() {
+		browser.findElement(By.id("side1")).sendKeys("20");
+		browser.findElement(By.id("side2")).sendKeys("4");
+		browser.findElement(By.id("side3")).sendKeys("4");
 		browser.findElement(By.id("identify-triangle-action")).click();
 		String expected = "Error: Not a Triangle";
 		String result = browser.findElement(By.id("triangle-type")).getText();
 		assertEquals(expected, result);
+		browser.close();
+	}
+
+	@Test
+	public void Not_A_Triangle_C3() {
+		browser.findElement(By.id("side1")).sendKeys("5");
+		browser.findElement(By.id("side2")).sendKeys("30");
+		browser.findElement(By.id("side3")).sendKeys("5");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Error: Not a Triangle";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
+	}
+
+	@Test
+	public void Not_A_Triangle_C2() {
+		browser.findElement(By.id("side1")).sendKeys("6");
+		browser.findElement(By.id("side2")).sendKeys("6");
+		browser.findElement(By.id("side3")).sendKeys("15");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Error: Not a Triangle";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
 	}
 
 	@Test
@@ -86,10 +114,11 @@ public class Triangle_Application {
 		String expected = "Equilateral";
 		String result = browser.findElement(By.id("triangle-type")).getText();
 		assertEquals(expected, result);
+		browser.close();
 	}
 
 	@Test
-	public void Isosceles() {
+	public void Isosceles_side1_side2() {
 		browser.findElement(By.id("side1")).sendKeys("8");
 		browser.findElement(By.id("side2")).sendKeys("8");
 		browser.findElement(By.id("side3")).sendKeys("12");
@@ -97,6 +126,31 @@ public class Triangle_Application {
 		String expected = "Isosceles";
 		String result = browser.findElement(By.id("triangle-type")).getText();
 		assertEquals(expected, result);
+		browser.close();
+	}
+
+	@Test
+	public void Isosceles_side2_side3() {
+		browser.findElement(By.id("side1")).sendKeys("5");
+		browser.findElement(By.id("side2")).sendKeys("10");
+		browser.findElement(By.id("side3")).sendKeys("10");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Isosceles";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
+	}
+
+	@Test
+	public void Isosceles_side1_side3() {
+		browser.findElement(By.id("side1")).sendKeys("3");
+		browser.findElement(By.id("side2")).sendKeys("2");
+		browser.findElement(By.id("side3")).sendKeys("3");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Isosceles";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
 	}
 
 	@Test
@@ -108,6 +162,7 @@ public class Triangle_Application {
 		String expected = "Scalene";
 		String result = browser.findElement(By.id("triangle-type")).getText();
 		assertEquals(expected, result);
+		browser.close();
 	}
 
 }
