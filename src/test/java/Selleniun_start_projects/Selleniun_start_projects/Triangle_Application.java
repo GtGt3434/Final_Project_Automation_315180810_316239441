@@ -236,5 +236,4 @@ public class Triangle_Application {
 		assertEquals(expected, result);
 		browser.close();
 	}
-
 }
