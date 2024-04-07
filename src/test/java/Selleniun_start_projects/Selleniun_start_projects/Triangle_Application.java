@@ -165,4 +165,76 @@ public class Triangle_Application {
 		browser.close();
 	}
 
+	@Test
+	public void Side1_Negative() {
+		browser.findElement(By.id("side1")).sendKeys("-2");
+		browser.findElement(By.id("side2")).sendKeys("4");
+		browser.findElement(By.id("side3")).sendKeys("3");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Error: Not a Triangle";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
+	}
+
+	@Test
+	public void Side2_Negative() {
+		browser.findElement(By.id("side1")).sendKeys("3");
+		browser.findElement(By.id("side2")).sendKeys("-3");
+		browser.findElement(By.id("side3")).sendKeys("3");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Error: Not a Triangle";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
+	}
+
+	@Test
+	public void Side3_Negative() {
+		browser.findElement(By.id("side1")).sendKeys("3");
+		browser.findElement(By.id("side2")).sendKeys("2");
+		browser.findElement(By.id("side3")).sendKeys("-3");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Error: Not a Triangle";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
+	}
+
+	@Test
+	public void Side1_Zero() {
+		browser.findElement(By.id("side1")).sendKeys("0");
+		browser.findElement(By.id("side2")).sendKeys("3");
+		browser.findElement(By.id("side3")).sendKeys("3");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Error: Not a Triangle";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
+	}
+
+	@Test
+	public void Side2_Zero() {
+		browser.findElement(By.id("side1")).sendKeys("3");
+		browser.findElement(By.id("side2")).sendKeys("0");
+		browser.findElement(By.id("side3")).sendKeys("3");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Error: Not a Triangle";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
+	}
+
+	@Test
+	public void Side3_Zero() {
+		browser.findElement(By.id("side1")).sendKeys("3");
+		browser.findElement(By.id("side2")).sendKeys("3");
+		browser.findElement(By.id("side3")).sendKeys("0");
+		browser.findElement(By.id("identify-triangle-action")).click();
+		String expected = "Error: Not a Triangle";
+		String result = browser.findElement(By.id("triangle-type")).getText();
+		assertEquals(expected, result);
+		browser.close();
+	}
+
 }
